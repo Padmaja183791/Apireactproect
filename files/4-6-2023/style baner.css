@@ -1,0 +1,73 @@
+.container{
+    width:1000px;
+    height:auto;
+    margin:auto;
+    overflow: hidden;
+}
+ 
+.banner
+{
+    width:100%;
+    height:200px;
+ 
+ 
+}
+h1{
+    text-align: center;
+   
+}
+p{
+    padding:10px;
+}
+   
+ 
+ 
+.navbar{
+    background-color:red;
+     padding: 4px;
+     text-align: center;
+     width:auto;
+     
+     
+}
+ 
+.navbar a{
+    margin-right: 80px;
+    color:white;
+    text-decoration: none;
+}
+.content
+{
+    width:100%;
+    height: auto;
+    overflow: hidden;
+}
+.left1
+{
+    background-color:green;
+    float: left;
+    width: 35%;
+    height: 300px;
+   
+}
+ 
+ 
+.right1{
+    background-color:orange;
+    width:65%;
+    height: 300px;
+    float: left;
+ 
+   
+}
+ 
+ 
+ 
+.footer{
+    background-color:black;
+    text-align: center;
+    padding: 5px;
+    width:auto;
+    color:white;
+ 
+}

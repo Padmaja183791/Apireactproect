@@ -1,0 +1,14 @@
+.pic{
+  width:200px;
+  height: 200px;
+  transform: rotate(0deg);
+  transition-duration: 3s;
+  
+}
+ 
+.pic1{
+  width: 200px;
+  height: 200px;
+  transform: rotate(180deg);
+  transition-duration: 3s;
+}

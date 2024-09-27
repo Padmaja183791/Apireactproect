@@ -1,0 +1,24 @@
+[
+    {
+     "name":"sachin",
+     "place":"delhi",
+     "age":"28",
+     "pic":"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSLSfRTce6vQU6s83HUOgd7b6PCuWUAW0SSgHcxVP97N2H7iV3j"
+    },
+
+    {
+     "name":"rohith",
+     "place":"mumbai",
+     "age":"37",
+     "pic":"https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQMjYrFKl1JFRSYQRRxSJUEn4oQy-Xc2f6isP63tmq9sJXHCyjp18p-0sxXO-et4TbAaSOEFUxWkUry6Js"
+    },
+    {
+    "name":"virat",
+    "place":"hyderabad",
+    "age":"37",
+    "pic":"https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQoQ5zbhmO0YPOnH6E9eDysW6eSlFiSUGMGwb09ZmolenLCeCh0PlB7hlDylJAcdNQOKREbhTAafsvKG0o"
+    }
+    
+ ]
+
+       

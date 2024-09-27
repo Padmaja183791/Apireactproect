@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto-scrolling Images</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+    #sky-form{
+         
+        background-color: #f6f6f7;
+       
+    }
+    .sky-form{
+        background-color: #CCCCCC;
+        color: #979194;
+        margin: auto;
+      
+    }
+    .reg_form{
+        margin: auto;
+        width: 500px;
+        margin: auto;
+        padding: 50px;
+
+
+        
+
+    }
+	.new_search_inner1 {
+		display: none;
+		float: left;
+		position: absolute;
+		right: 0;
+		bottom: -60px;
+		background: #fff;
+		padding: 5px 10px;
+
+	}
+
+	.new_search1 {
+		position: relative;
+		right: 0;
+		width: 25px;
+		float: right;
+		cursor: pointer;
+		top: 29px;
+		height: 25px;
+		background: url(https://www.fieldking.com/icons/language.png);
+		background-size: cover;
+	}
+
+	.new_search_inner {
+		display: none;
+		width: 270px;
+		float: left;
+		position: absolute;
+		right: 0;
+		bottom: -45px;
+		background: #fff;
+		padding: 3px 7px;
+
+	}
+
+	.new_search {
+		position: relative;
+		right: 0;
+		width: 45px;
+		float: right;
+		cursor: pointer;
+		top: 29px;
+		padding-left: 15px;
+		height: 40px;
+	}
+
+	.new_search:before {
+		font-family: FontAwesome;
+		content: "\f002";
+		position: absolute;
+		font-size: 22px;
+		color: #a0a0a0;
+	}
+
+	.cse .gsc-search-button-v2,
+	.gsc-search-button-v2 {
+		padding: 9px 27px;
+		height: 33px;
+	}
+
+	.gsc-control-cse .gs-spelling,
+	.gsc-control-cse .gs-result .gs-title,
+	.gsc-control-cse .gs-result .gs-title * {
+		font-size: 20px;
+		text-decoration: none;
+	}
+
+	.results {
+		margin-top: 25px;
+	}
+
+	.gsc-webResult.gsc-result {
+		border-bottom: 1px solid #e0e0e0;
+		padding: 20px 0;
+	}
+
+	.gsc-webResult.gsc-result:hover,
+	.gsc-imageResult:hover {
+		border-bottom: 1px solid #e0e0e0;
+	}
+
+	input.gsc-input,
+	.gsc-input-box,
+	.gsc-input-box-hover,
+	.gsc-input-box-focus {
+		border-radius: 30px;
+	}
+
+	.gsc-search-box-tools .gsc-search-box .gsc-input {
+		padding-right: 5px;
+	}
+
+	.n1 {
+		top: 35px;
+		left: 217px !IMPORTANT;
+	}
+
+	.submenu {
+		position: absolute;
+		top: 28px;
+		left: -15px;
+		text-align: center;
+	}
+
+	.submenu p {
+		font-weight: bold;
+	}
+
+	.call_header {
+		border-radius: 530px;
+		padding: 6px 15px;
+		color: #e96b3d;
+		font-size: 18px;
+	}
+
+	.call_header i {
+		font-size: 26px;
+		color: #4fce5d;
+	}
+
+	.call_header b {
+		position: relative;
+		top: -3px;
+		margin-left: 3px;
+	}
+
+	.icon_pro {
+		text-align: center;
+		display: block;
+		margin-bottom: -10px;
+	}
+
+	.icon_pro img {
+		height: 15px;
+		display: inline-block;
+	}
+
+	.nav>li>a {
+		padding: 22px 12px;
+	}
+
+	.goog-te-banner-frame {
+		display: none !IMPORTANT;
+	}
+
+	body {
+		top: 0 !IMPORTANT;
+	}
+
+	@media only screen and (min-width:320px) and (max-width: 767px) {
+		.submenu {
+			display: none;
+		}
+
+		.m_icon_pro img {
+			width: 30px;
+			position: relative;
+			top: 4px;
+			margin-right: 5px;
+		}
+
+		.m_icon_pro {
+			display: inline-block;
+		}
+
+		.new_search1 {
+			position: absolute;
+			right: 78px;
+			top: 24px;
+		}
+	}
+    .footer {
+          align-items: center;
+    }
+</style>
+
+<body>
+    <h3>Our network across the globe is 1400 Dealers strong. Come, be a part of this incredible journey!</h3>
+   
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 30px;">
+                <img class="bimg" src="become.jpg" alt="Dealership Benefits">
+            </div>
+              
+            
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 30px;">
+                <h2>Why MTP?</h2>
+                <H3>Dealership Benefits</H3>
+                <P>Company`s diverse range of products include 35+ category of Farm Equipment's for every farmer's Need.
+                    Dedicated account management by our superior sales and back end team for Managing Orders.
+                    Excellent Onsite Customer Service support.
+                    Comprehensive Marketing Support and Marketing collateral's in regional language's.
+                    Stock offers/annual offers or year-end closing offers to Motivate channel partners.
+                    Competent Operations team to fulfill bulk orders with precision in Peak season.
+                    Warranty Support
+                    Training Programs and Demo Session's for Dealers/Distributors for New Products.
+                    Sponsorship Program for Plant Visits & Domestic & International Exhibitions.</P>
+            </div>
+            
+
+
+            </div>
+           
+                </div>
+              
+                <div style="display: inline-block;">
+							
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <table border="1px" align="center"width="1000px">
+                        <tr>
+                            <td colspan="4" align="center">
+                                <form>
+
+                    <div class="reg_form" >
+                        <form id="sky-form" class="sky-form">
+                            <p>
+                                Please Fill Out Below Form. Our Sales Team will Contact You Soon.
+                            </p>
+                            <fieldset>
+                                <section>
+                                    <label class="input"> <i class="icon-append icon-user-alt"></i>
+                                        <input type="name" id="name" name="name" placeholder="Name *" required="">
+                                        <b class="tooltip tooltip-bottom-right">Please enter your name</b> </label>
+                                </section>
+                                <section>
+                                    <label class="input"> <i class="icon-append icon-envelope-alt"></i>
+                                        <input type="email" id="email" name="email" placeholder="Email address *" required="">
+                                        <b class="tooltip tooltip-bottom-right">Needed to give you response</b> </label>
+                                </section>
+                                <section>
+                                    <label class="input"> <i class="icon-append icon-phone"></i>
+                                        <input id="phone" type="text" name="phone" placeholder="Mobile/Phone *" minlength="10" maxlength="10" onkeypress="return isNumberKey(event)" required="">
+                                        <b class="tooltip tooltip-bottom-right">Please enter your mobile number</b> </label>
+                                </section>
+                                <section>
+                                    
+                                    <label class="label"></label>
+                                    <select id="country" name="country" style="height: 37px;width: 100%;border-color: #CCCCCC;" onclick="getState()" required="">
+                                        <option>Select Your Country *</option>
+                                        <optgroup label="North America">
+                                        <option value="NA-US">United States</option>
+                                        <option value="NA-UM">United States Minor Outlying Islands</option>
+                                        <option value="NA-CA">Canada</option>
+                                        <option value="NA-MX">Mexico</option>
+                                        <option value="NA-AI">Anguilla</option>
+                                      
+                                        -->   <option value="AF-UG">Uganda</option>
+                                        <option value="AF-EH">Western Sahara</option>
+                                        <option value="AF-ZM">Zambia</option>
+                                        <option value="AF-ZW">Zimbabwe</option>
+                                        </optgroup>
+                                        <option value="AQ">Antarctica</option>
+                                    </select>
+                                </section>
+                                <section class="state1">
+                                    <label class="input"> <i class="icon-append icon-globe"></i>
+                                        <input type="text" name="state" placeholder="State *" id="state">
+                                        <b class="tooltip tooltip-bottom-right">Your State</b> </label>
+                                </section>
+                                <section class="state2 hide">
+                                    <label class="label"></label>
+                                    <select id="state2" name="state" style="height: 37px;width: 100%;border-color: #CCCCCC;" required="">
+                                        <option>Select Your State *</option>
+                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                        <option value="Assam">Assam</option>
+                                        <option value="Bihar">Bihar</option>
+                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Gujarat">Gujarat</option>
+                                        <option value="Haryana">Haryana</option>
+                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                        <option value="Jharkhand">Jharkhand</option>
+                                        <option value="Karnataka">Karnataka</option>
+                                        <option value="Kerala">Kerala</option>
+                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                        <option value="Maharashtra">Maharashtra</option>
+                                        <option value="Manipur">Manipur</option>
+                                        <option value="Meghalaya">Meghalaya</option>
+                                        <option value="Mizoram">Mizoram</option>
+                                        <option value="Nagaland">Nagaland</option>
+                                        <option value="Odisha">Odisha</option>
+                                        <option value="Punjab">Punjab</option>
+                                        <option value="Rajasthan">Rajasthan</option>
+                                        <option value="Sikkim">Sikkim</option>
+                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                        <option value="Telangana">Telangana</option>
+                                        <option value="Tripura">Tripura</option>
+                                        <option value="Uttar Pradesh Central">Uttar Pradesh Central</option>
+                                        <option value="Uttar Pradesh EAST-1">Uttar Pradesh EAST-1</option>
+                                        <option value="Uttar Pradesh EAST-2">Uttar Pradesh EAST-2</option>
+                                        <option value="Uttar Pradesh WEST">Uttar Pradesh WEST</option>
+                                        <option value="Uttarakhand">Uttarakhand</option>
+                                        <option value="West Bengal">West Bengal</option> 
+                                    </select>
+                                </section>
+                                <section>
+                                    <label class="input"> <i class="icon-append icon-globe"></i>
+                                        <input type="text" name="city" placeholder="City *" id="city" required="">
+                                        <b class="tooltip tooltip-bottom-right">Your city</b> </label>
+                                </section>
+                                
+                                
+                                <section>
+                                    <label class="label">Intrested In *</label>
+                                    <div class="btn-group bootstrap-select show-tick dropup"><button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="product" title="Nothing selected"><span class="filter-option pull-left">Nothing selected</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox" style="max-height: 1092.19px; overflow: hidden; min-height: 166px;"><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search"></div><ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 1048.19px; overflow-y: auto; min-height: 122px;"><li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Pneumatic Planter</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Multi Crop Row Planter</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Zero Till</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Post Hole Digger</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="4"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Roto Seed Drill</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="5"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Crop Protection</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="6"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Boom Sprayer</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="7"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Fertilizer Spreader</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="8"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Rotary Tiller</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="9"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Harrows</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="10"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Plough</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="11"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Sub Soiler</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="12"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Cultivator / Tiller</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="13"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Disc Ridger</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="14"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Power Harrow</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="15"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Ripper</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="16"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Forage Mower</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="17"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Multi Crop Harvester</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="18"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Round Baler</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="19"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Square Baler</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="20"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Hay Rake</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="21"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Sugar Cane Loader</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="22"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Trailer</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="23"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Water Bowser / Tanker</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="24"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Bale Spear</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="25"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Leveler</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="26"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Slasher</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="27"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Terracer Blade</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="28"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Box Blade</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select name="product" id="product" style="height: 37px;width: 100%;border-color: #CCCCCC;" class="selectpicker" data-live-search="true" multiple="" required="" tabindex="-98">
+                                    <option value="Pneumatic Planter">Pneumatic Planter</option>
+                                    <option value="Multi Crop Row Planter">Multi Crop Row Planter</option>
+                                    <option value="Zero Till">Zero Till</option>
+                                    <option value="Post Hole Digger">Post Hole Digger</option>
+                                    <option value="Roto Seed Drill">Roto Seed Drill</option>
+                                    <option value="Crop Protection">Crop Protection</option>
+                                    <option value="Boom Sprayer">Boom Sprayer</option>
+                                    <option value="Fertilizer Spreader">Fertilizer Spreader</option>
+                                    <option value="Rotary Tiller">Rotary Tiller</option>
+                                    <option value="Harrows">Harrows</option>
+                                    <option value="Plough">Plough</option>
+                                    <option value="Sub Soiler">Sub Soiler</option>
+                                    <option value="Cultivator / Tiller">Cultivator / Tiller</option>
+                                    <option value="Disc Ridger">Disc Ridger</option>
+                                    <option value="Power Harrow">Power Harrow</option>
+                                    <option value="Ripper">Ripper</option>
+                                    <option value="Forage Mower">Forage Mower</option>
+                                    <option value="Multi Crop Harvester">Multi Crop Harvester</option>
+                                    <option value="Round Baler">Round Baler</option>
+                                    <option value="Square Baler">Square Baler</option>
+                                    <option value="Hay Rake">Hay Rake</option>
+                                    <option value="Sugar Cane Loader">Sugar Cane Loader</option>
+                                    <option value="Trailer">Trailer</option>
+                                    <option value="Water Bowser / Tanker">Water Bowser / Tanker</option>
+                                    <option value="Bale Spear">Bale Spear</option>
+                                    <option value="Leveler">Leveler</option>
+                                    <option value="Slasher">Slasher</option>
+                                    <option value="Terracer Blade">Terracer Blade</option>
+                                    <option value="Box Blade">Box Blade</option>
+                                        
+                                    </select></div>
+                                </section>
+                            </fieldset>
+                             
+                            <footer style="display: inline-block;">
+                                <div style="color:red;" id="error_msg" class="justify-content:center">Required field(s) name, email, phone, country, city, state is missing or empty</div>
+                                <div>
+                                    <input type="hidden" id="query_type" value="Become A Dealer">
+                                    <div id="fk_lodr" class="lds-ellipsis hide"><div></div><div></div><div></div><div></div></div>
+                                    <button style="border-radius: 30px;background: #de541f;" type="button" onclick="submitBecomeDealerRequest()" class="button" id="submit-become">
+                                        Submit
+                                    </button>
+                                    <tr>
+
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </footer>
+                            <div class="message">
+                                <i class="icon-ok"></i>
+                                <p>
+                                    Your message was successfully sent!
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div></div>
+                 
+
+               
+               
+      
+            </table>
+</body>
+</html>

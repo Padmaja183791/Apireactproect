@@ -1,0 +1,33 @@
+[
+  {
+
+  "name":"vani",
+  "place":"madhapur",
+  "age":25
+
+},
+{
+  "name":"aswitha",
+  "place":"vizag",
+  "age":24
+
+},
+{
+  "name":"prithi",
+  "place":"bnglr",
+  "age":23
+ 
+},
+{
+  "name":"keerthi",
+  "place":"chennai",
+  "age":21
+ 
+},
+{
+  "name":"ravi",
+  "place":"delhi",
+  "age":22
+ 
+}
+]

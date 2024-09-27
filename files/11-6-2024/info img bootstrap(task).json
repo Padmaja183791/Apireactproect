@@ -1,0 +1,39 @@
+[
+    {
+    
+     "place":"delhi",
+    
+     "pic":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxT7yrfLUPc-XH6KCZapND2NGb-O1vHtLi8w&s"
+    },
+
+    {
+     
+     "place":"mumbai",
+     
+     "pic":"https://www.treebo.com/blog/wp-content/uploads/2018/01/Sikkim.jpg"
+    },
+    {
+    
+    "place":"hyderabad",
+    
+    "pic":"https://hblimg.mmtcdn.com/content/hubble/img/agra/mmt/activities/m_activities-agra-taj-mahal_l_400_640.jpg"
+    },
+    {
+    
+        "place":"hyderabad",
+        "pic":"https://media-cdn.tripadvisor.com/media/photo-m/1280/0f/98/f7/df/charminar.jpg"
+    },
+    {
+        
+        "place":"hyderabad",
+        "pic":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQIG8I5p4etsOoDV1PkeddcDX6D5VJMbfzcg&s"
+    },
+    {
+    
+        "place":"temple",
+        "pic":"https://blog.thomascook.in/wp-content/uploads/2017/09/Untitled-design50.png"
+    }
+    
+ ]
+
+       
